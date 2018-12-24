@@ -39,7 +39,7 @@ public class Main extends Application {
 
         Parent root2 = fxmlLoader.load();
         Stage stage = new Stage();
-        stage.setTitle("h2=0（广度优先搜索）");
+        stage.setTitle("h2=曼哈顿距离之和");
         stage.setScene(new Scene(root2, 900, 900));
         stage.setX(primaryStage.getX() + primaryStage.getWidth());
         primaryStage.setY(primaryStage.getY());

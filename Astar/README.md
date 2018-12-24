@@ -1,3 +1,11 @@
+# 运行方法
+
+```sh
+java -jar Astar.jar
+```
+
+
+
 # 代码框架
 
 - package `Astar` ：定义A*搜索的基本框架
@@ -13,6 +21,8 @@
   - package `Search2` 
     - class `EP2Search extends Astar<EPNode>` ：使用h2函数的八数码A*搜索，重写 `h` 函数为返回0
   - class `EPController` ：UI控制类
+
+
 
 # 问题回答
 

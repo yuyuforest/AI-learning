@@ -2,6 +2,7 @@ package EightPuzzle;
 
 import Astar.Astar;
 import Main.Controller;
+import javafx.concurrent.Task;
 import javafx.scene.control.Control;
 import javafx.scene.control.Label;
 import javafx.scene.control.TextArea;
@@ -83,13 +84,11 @@ public class EPController {
        }
     }
 
-    public void onBestClick() {
+    public void onBestClick() throws InterruptedException {
         if(!epSearch.isFinish()) {
             bestPath.setText("搜索未结束");
             return;
-        } else if(index == bestlist.size()){
-            return;
-        }
+        } else if(index == bestlist.size()) return;
         EPNode node = bestlist.get(index++);
         bestPath.setText(bestPath.getText() + node.print());
         int[] puzzles = node.getState().getPuzzles();

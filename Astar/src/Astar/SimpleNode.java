@@ -6,9 +6,9 @@ public abstract class SimpleNode<State extends SimpleState> implements Comparabl
     private State state;
     private int prev;
     private int index;
-    private int fvalue;
-    private int gvalue;
-    private int hvalue;
+    private double fvalue;
+    private double gvalue;
+    private double hvalue;
 
     public SimpleNode(State state, int prev, int index) {
         this.state = state;
@@ -26,7 +26,7 @@ public abstract class SimpleNode<State extends SimpleState> implements Comparabl
         this.prev = prev;
     }
 
-    public void setValue(int gvalue, int hvalue) {
+    public void setValue(double gvalue, double hvalue) {
         this.gvalue = gvalue;
         this.hvalue = hvalue;
         this.fvalue = gvalue + hvalue;
@@ -44,15 +44,15 @@ public abstract class SimpleNode<State extends SimpleState> implements Comparabl
         return index;
     }
 
-    public int getFvalue() {
+    public double getFvalue() {
         return fvalue;
     }
 
-    public int getGvalue() {
+    public double getGvalue() {
         return gvalue;
     }
 
-    public int getHvalue() {
+    public double getHvalue() {
         return hvalue;
     }
 
@@ -65,6 +65,6 @@ public abstract class SimpleNode<State extends SimpleState> implements Comparabl
 
     @Override
     public int compareTo(SimpleNode o) {
-        return fvalue - o.fvalue;
+        return fvalue == o.fvalue ? 0 : (fvalue > o.fvalue ? 1 : -1);
     }
 }

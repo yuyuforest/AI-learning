@@ -20,7 +20,8 @@ public class Controller {
     public void init() {
         int[] endState = {1, 2, 3, 8, 0, 4, 7, 6, 5};
 
-        int steps = new Random().nextInt(10) + 1;
+        //int steps = new Random().nextInt(10) + 1;
+        int steps = 100;
         EPState state = new EPState(endState);
         for(int i = 0; i < steps; i++) {
             ArrayList<EPState> next = state.next();
