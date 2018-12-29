@@ -1,9 +1,9 @@
-package EightPuzzle.Search1;
+package eightpuzzle.Search1;
 
-import Astar.Astar;
-import Astar.SimpleState;
-import EightPuzzle.EPNode;
-import EightPuzzle.EPState;
+import astar.Astar;
+import astar.SimpleState;
+import eightpuzzle.EPNode;
+import eightpuzzle.EPState;
 
 public class EP1Search extends Astar<EPNode> {
 

@@ -1,12 +1,11 @@
-package EightPuzzle.Search2;
+package eightpuzzle.Search2;
 
-import Astar.Astar;
-import Astar.SimpleState;
-import EightPuzzle.EPNode;
-import EightPuzzle.EPState;
+import astar.Astar;
+import astar.SimpleState;
+import eightpuzzle.EPNode;
+import eightpuzzle.EPState;
 
 import java.util.ArrayList;
-import java.util.Arrays;
 
 public class EP2Search extends Astar<EPNode> {
 

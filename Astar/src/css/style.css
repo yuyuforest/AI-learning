@@ -1,0 +1,28 @@
+.label{
+    -fx-pref-width: 70;
+    -fx-pref-height: 70;
+    -fx-font-size: 15pt;
+    -fx-alignment: "CENTER";
+    -fx-background-color: #FFC073;
+}
+
+.label-space{
+    -fx-background-color: #FFD9AA;
+}
+
+.button {
+
+    -fx-pref-height: 60;
+    -fx-padding: 5 22 5 22;
+    -fx-border-width: 2;
+    -fx-background-radius: 0;
+    -fx-background-color: #1d1d1d;
+    -fx-font-family: "Microsoft YaHei", Helvetica, Arial, sans-serif;
+    -fx-font-size: 15pt;
+    -fx-text-fill: #d8d8d8;
+    -fx-background-insets: 0 0 0 0, 0, 1, 2;
+}
+
+.text-area{
+    -fx-pref-width: 300;
+}

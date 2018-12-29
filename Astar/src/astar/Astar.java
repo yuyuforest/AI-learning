@@ -1,4 +1,4 @@
-package Astar;
+package astar;
 
 import java.util.ArrayList;
 import java.util.Collections;
@@ -55,6 +55,7 @@ public abstract class Astar<Node extends SimpleNode> {
         str += "open表的结点数=" + open.size() + " 图的结点数=" + graph.size() + "\n\n";
         str += "choose node with min f value\n";
         Node node = open.remove(0);
+        close.add(node);
         str += node.print();
 
         if(end.indexOf(node) != -1) {
@@ -90,7 +91,6 @@ public abstract class Astar<Node extends SimpleNode> {
             }
             str += newNode.print();
         }
-        close.add(node);
         return str;
     }
 
@@ -137,12 +137,16 @@ public abstract class Astar<Node extends SimpleNode> {
         if(openIndex != -1) {   // node在open表里，尚未生成后继
             origin = open.get(openIndex);
         } else {                // node在close表里，已生成后继
-            origin = close.get(close.indexOf(node));
+            int closeIndex = close.indexOf(node);
+            origin = close.get(closeIndex);
         }
-        if(node.compareTo(origin) < 0) {
-            tree.get(origin.getPrev()).remove(new Integer(origin.getIndex()));
-            origin.setPrev(node.getPrev());
-            tree.get(origin.getPrev()).add(origin.getIndex());
+
+        if(node.compareTo(origin) < 0) {    // 若这个结点有比原本更小的f值，更新这个结点
+            if(origin.getPrev() >= 0) {
+                tree.get(origin.getPrev()).remove(new Integer(origin.getIndex()));
+                origin.setPrev(node.getPrev());
+                tree.get(origin.getPrev()).add(origin.getIndex());
+            }
             origin.setValue(node.getGvalue(), node.getHvalue());
         } else {
             return;
@@ -155,7 +159,11 @@ public abstract class Astar<Node extends SimpleNode> {
         }
     }
 
-    public SimpleState getBeginState() {
-        return begin.get(0).getState();
+    public int getOpenSize() {
+        return open.size();
+    }
+
+    public int getGraphSize() {
+        return graph.size();
     }
 }

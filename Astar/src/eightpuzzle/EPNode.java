@@ -1,6 +1,6 @@
-package EightPuzzle;
+package eightpuzzle;
 
-import Astar.SimpleNode;
+import astar.SimpleNode;
 
 import java.util.ArrayList;
 

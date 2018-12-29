@@ -1,30 +1,36 @@
 # 运行方法
 
 ```sh
-java -jar Astar.jar
+java -jar astar.jar
 ```
 
 
 
 # 代码框架
 
-- package `Astar` ：定义A*搜索的基本框架
+- package `astar` ：定义A*搜索的基本框架
   - interface `SimpleState` ：A*搜索的基本节点的状态
   - abstract class `SimpleNode<State extends SimpleState>`：A*搜索的基本节点，包括状态、索引、父节点索引、f/g/h评估值
-  - abstract class `Astar<Node extends SimpleNode>` ：A*搜索的基本实现，子类要重载 `h` 函数
+  - abstract class `astar<Node extends SimpleNode>` ：A*搜索的基本实现，子类要重载 `h` 函数
 
-- package `EightPuzzle` ：八数码问题的具体实现
+- package `eightpuzzle` ：八数码问题的具体实现
   - class `EPState implements SimpleState` ：八数码问题的节点状态，即数码摆放情况
   - class `EPNode extends SimpleNode<EPState>` ：八数码问题的节点
   - package `Search1` 
-    - class `EP1Search extends Astar<EPNode>` ：使用h1函数的八数码A*搜索，重写 `h` 函数为返回放错位置的码个数
+    - class `EP1Search extends astar<EPNode>` ：使用h1函数的八数码A*搜索，重写 `h` 函数为返回放错位置的码个数
   - package `Search2` 
-    - class `EP2Search extends Astar<EPNode>` ：使用h2函数的八数码A*搜索，重写 `h` 函数为返回0
+    - class `EP2Search extends astar<EPNode>` ：使用h2函数的八数码A*搜索，重写 `h` 函数为返回0
   - class `EPController` ：UI控制类
 
 
 
 # 问题回答
+
+**比较搜索效率**
+
+
+
+
 
 **验证凡A\*算法挑选出来求后继的点 n ，必定满足：f(n) ≤  f\*(S0)。**
 
