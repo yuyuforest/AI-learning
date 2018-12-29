@@ -1,0 +1,13 @@
+# META
+META-INF/
+
+# Artifact
+*.html
+*.jnlp
+
+# Output
+out/
+
+# Intellij
+.idea/
+*.iml
