@@ -15,12 +15,13 @@ public class Main extends Application {
     @Override
     public void start(Stage primaryStage) throws Exception{
         URL location = getClass().getResource("/eightpuzzle/EPScene.fxml");
+
         FXMLLoader fxmlLoader = new FXMLLoader();
         fxmlLoader.setLocation(location);
         fxmlLoader.setBuilderFactory(new JavaFXBuilderFactory());
 
         Parent root = fxmlLoader.load();
-        primaryStage.setTitle("astar");
+        primaryStage.setTitle("Astar");
         primaryStage.setScene(new Scene(root, 1500, 950));
         primaryStage.show();
 

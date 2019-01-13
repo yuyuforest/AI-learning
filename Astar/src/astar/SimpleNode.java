@@ -20,7 +20,7 @@ public abstract class SimpleNode<State extends SimpleState> implements Comparabl
         return "index=" + index + " f=" + fvalue + " g=" + gvalue + " h=" + hvalue + "\n" + state.print();
     }
 
-    public abstract ArrayList<State> next();
+    public abstract ArrayList<State> next();	// 获取后继的状态，留待子类重写
 
     public void setPrev(int prev) {
         this.prev = prev;
@@ -57,14 +57,14 @@ public abstract class SimpleNode<State extends SimpleState> implements Comparabl
     }
 
     @Override
-    public boolean equals(Object obj) {
+    public boolean equals(Object obj) {     // 保证可以在List<SimpleNode>里找到与当前结点状态相同的结点
         if(!(obj instanceof SimpleNode)) return false;
         SimpleNode sn = (SimpleNode<State>) obj;
         return state == sn.state;
     }
 
     @Override
-    public int compareTo(SimpleNode o) {
+    public int compareTo(SimpleNode o) {    // 保证可以排序List<SimpleNode>、比较两个结点的f值大小
         return fvalue == o.fvalue ? 0 : (fvalue > o.fvalue ? 1 : -1);
     }
 }

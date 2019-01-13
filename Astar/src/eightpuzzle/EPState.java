@@ -34,7 +34,7 @@ public class EPState implements SimpleState {
         return puzzles;
     }
 
-    public ArrayList<EPState> next() {
+    public ArrayList<EPState> next() {  // 获取后继状态
         ArrayList<EPState> nextStates = new ArrayList<>();
         int space = 0;
         for(int i = 0; i < puzzles.length; i++) {

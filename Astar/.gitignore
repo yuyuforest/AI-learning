@@ -1,9 +1,0 @@
-# META
-META-INF/
-
-# Output
-out/
-
-# Intellij
-.idea/
-*.iml
